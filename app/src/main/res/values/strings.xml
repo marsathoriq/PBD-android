@@ -4,4 +4,9 @@
     <string name="prevTabText">SEBELUM</string>
     <string name="teamName">TextView</string>
     <string name="subscribe">Subscribe</string>
+    <string name="TitleEventDetail">Event Detail</string>
+    <string name="versus">vs</string>
+    <string name="shots">Shots</string>
+    <string name="goals">Goals</string>
+    <string name="weather">Weather</string>
 </resources>
