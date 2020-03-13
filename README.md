@@ -16,8 +16,8 @@ CardView : Untuk merapikan bagian dari RecyclerView
 Picasso : Untuk merender gambar dari URL
 
 ## 4. Screenshot aplikasi
-![](image/homepage1.jpg|width=100)
-![](image/eventDetail1.jpg|width=100)
-![](image/eventDetail2.jpg|width=100)
-![](image/teamDetail1.jpg|width=100)
-![](image/teamDetail2.jpg|width=100)
+![](image/homepage1.jpg)
+![](image/eventDetail1.jpg)
+![](image/eventDetail2.jpg)
+![](image/teamDetail1.jpg)
+![](image/teamDetail2.jpg)
