@@ -49,23 +49,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             public void onClick(View v) {
                 Date schedule = null;
                 try {
-                    schedule = new SimpleDateFormat("YYYY-MM-dd").parse(Mdata.get(viewHolder.getAdapterPosition()).getSchedule());
+                    schedule = new SimpleDateFormat("yyyy-MM-dd").parse(Mdata.get(viewHolder.getAdapterPosition()).getSchedule());
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
                 Date now = new Date();
                 if (now.getTime()>schedule.getTime()){
                     Intent i = new Intent(context, EventDetail.class);
-                    i.putExtra("id", Mdata.get(viewHolder.getAdapterPosition()).getEvent());
+                    i.putExtra("id",Mdata.get(viewHolder.getAdapterPosition()).getEvent());
                     context.startActivity(i);
                 }else{
                     Intent i = new Intent(context, NextEventDetail.class);
-                    i.putExtra("id", Mdata.get(viewHolder.getAdapterPosition()).getEvent());
+                    i.putExtra("id",Mdata.get(viewHolder.getAdapterPosition()).getEvent());
                     context.startActivity(i);
                 }
             }
         });
-        return new MyViewHolder(view);
+        return viewHolder;
     }
 
     @Override

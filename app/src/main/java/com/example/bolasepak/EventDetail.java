@@ -46,7 +46,7 @@ public class EventDetail extends AppCompatActivity {
     }
 
     public  void searchEvent(){
-        String queryString = "441613";
+        String queryString = getIntent().getExtras().getString("id");
 
         //for checking the network state and empty search field case
         ConnectivityManager connMngr = (ConnectivityManager)
