@@ -17,11 +17,10 @@ public class MainActivity extends AppCompatActivity {
     private AppBarLayout appBarLayout;
     private ViewPager viewPager;
     
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.next_event_fragment);
         tabLayout = (TabLayout) findViewById(R.id.tabLayoutId);
         appBarLayout = (AppBarLayout) findViewById(R.id.appbarid);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
