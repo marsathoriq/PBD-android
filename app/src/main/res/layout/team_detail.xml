@@ -8,36 +8,6 @@
     android:layout_height="match_parent"
     tools:context="teamDetail">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayoutNow"
-        android:layout_width="205dp"
-        android:layout_height="34dp"
-        android:minHeight="?actionBarSize"
-        app:tabBackground="@color/colorPrimary"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/white"
-        app:tabIndicatorHeight="4dp"
-        app:tabMode="fixed"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="246dp">
-
-    </android.support.design.widget.TabLayout>
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayoutPrev"
-        android:layout_width="205dp"
-        android:layout_height="34dp"
-        android:minHeight="?actionBarSize"
-        app:tabBackground="@color/colorPrimary"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/white"
-        app:tabIndicatorHeight="4dp"
-        app:tabMode="fixed"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="246dp">
-        
-    </android.support.design.widget.TabLayout>
-
     <ImageView
         android:id="@+id/LogoHome"
         android:layout_width="88dp"
@@ -50,20 +20,26 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/teamNameTextView"
-        android:layout_width="0dp"
+        android:id="@+id/TeamHome"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:text="@string/teamName"
+        android:layout_marginTop="104dp"
+        android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/TeamHome"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toEndOf="@+id/LogoHome"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/subscribeBtn"
+        android:layout_width="122dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/subscribe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/LogoHome"
+        app:layout_constraintTop_toBottomOf="@+id/TeamHome" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
