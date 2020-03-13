@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -46,7 +47,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Date schedule = new SimpleDateFormat("YYYY-MM-dd").parse(Mdata.get(viewHolder.getAdapterPosition()).getSchedule());
+                Date schedule = null;
+                try {
+                    schedule = new SimpleDateFormat("YYYY-MM-dd").parse(Mdata.get(viewHolder.getAdapterPosition()).getSchedule());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 Date now = new Date();
                 if (now.getTime()>schedule.getTime()){
                     Intent i = new Intent(context, EventDetail.class);
@@ -59,7 +65,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 }
             }
         });
-        //return new MyViewHolder(view);
+        return new MyViewHolder(view);
     }
 
     @Override

@@ -31,7 +31,7 @@ public class teamDetail extends AppCompatActivity {
 
         mHomeImage = (ImageView) findViewById(R.id.LogoHome);
         mAwayImage = (ImageView) findViewById(R.id.LogoAway);
-        this.searchEvent();
+        //this.searchEvent();
     }
 
     public void goToMain(View view) {
@@ -40,20 +40,20 @@ public class teamDetail extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public  void searchEvent(){
-        String queryString = "441613";
-
-        //for checking the network state and empty search field case
-        ConnectivityManager connMngr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMngr.getActiveNetworkInfo();
-
-        if(queryString.length() == 0) {
-            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
-        } else if ((networkInfo != null) && networkInfo.isConnected() && (queryString.length() != 0)) {
-            new fetchNextEvent(mDate, mEvent, mHomeName, mAwayName, mHomeScore, mAwayScore, mHomeImage, mAwayImage).execute(queryString);
-        } else {
-            Toast.makeText(this, "please check yout network connection and try again", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    public  void searchEvent(){
+//        String queryString = "441613";
+//
+//        //for checking the network state and empty search field case
+//        ConnectivityManager connMngr = (ConnectivityManager)
+//                getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo networkInfo = connMngr.getActiveNetworkInfo();
+//
+//        if(queryString.length() == 0) {
+//            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+//        } else if ((networkInfo != null) && networkInfo.isConnected() && (queryString.length() != 0)) {
+//            new FetchNextEvent(mDate, mEvent, mHomeName, mAwayName, mHomeScore, mAwayScore, mHomeImage, mAwayImage).execute(queryString);
+//        } else {
+//            Toast.makeText(this, "please check yout network connection and try again", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }
