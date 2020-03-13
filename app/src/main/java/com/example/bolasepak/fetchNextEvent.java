@@ -1,6 +1,7 @@
 package com.example.bolasepak;
 
 import android.os.AsyncTask;
+import android.text.format.DateFormat;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,20 +12,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class fetchNextEvent extends AsyncTask<String, Void, String> {
-
-    private TextView mEvent, eventName, homeId, homeName, awayId, awayName, homeScore, awayScore,  mDate;
+    private TextView mEvent, mDate, mHomeName, mAwayName, mHomeScore, mAwayScore;
     private ImageView mHomeImage, mAwayImage;
 
-    public fetchNextEvent(TextView event, TextView eventName, TextView homeId, TextView homeName, TextView awayId, TextView awayName, TextView homeScore, TextView awayScore, TextView mDate, ImageView mHomeImage, ImageView mAwayImage) {
-        this.mEvent = event;
-        this.eventName = eventName;
-        this.homeId = homeId;
-        this.homeName = homeName;
-        this.awayId = awayId;
-        this.awayName = awayName;
-        this.homeScore = homeScore;
-        this.awayScore = awayScore;
+    public fetchNextEvent(TextView mDate, TextView mEvent, TextView mHomeName, TextView mAwayName, TextView mHomeScore, TextView mAwayScore, ImageView mHomeImage, ImageView mAwayImage) {
+        this.mEvent = mEvent;
         this.mDate = mDate;
+        this.mHomeName = mHomeName;
+        this.mAwayName = mAwayName;
+        this.mHomeScore = mHomeScore;
+        this.mAwayScore = mAwayScore;
         this.mHomeImage = mHomeImage;
         this.mAwayImage = mAwayImage;
     }
@@ -44,27 +41,24 @@ public class fetchNextEvent extends AsyncTask<String, Void, String> {
 
             for (int i = 0; i < eventsArray.length(); i++){
                 JSONObject event = eventsArray.getJSONObject(i);
-                String mEvent = null;
-                String eventName = null;
-                String homeId = null;
+                String eventId = null;
                 String homeName = null;
-                String awayId = null;
                 String awayName = null;
+                String homeId = null;
+                String awayId = null;
                 String homeScore = null;
                 String awayScore = null;
-                String mDate = null;
                 String date = null;
 
                 try {
-                    mEvent = event.getString("idEvent");
-                    eventName = event.getString("strEvent");
-                    homeId = event.getString("idHomeTeam");
+                    eventId = event.getString("idEvent");
+                    date = event.getString("strDate");
                     homeName = event.getString("strHomeTeam");
-                    awayId = event.getString("idAwayTeam");
                     awayName = event.getString("strAwayTeam");
+                    homeId = event.getString("idHomeTeam");
+                    awayId = event.getString("idAwayTeam");
                     homeScore = event.getString("intHomeScore");
                     awayScore = event.getString("intAwayScore");
-                    mDate = event.getString("dateEvent");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -72,18 +66,19 @@ public class fetchNextEvent extends AsyncTask<String, Void, String> {
                 new fetchTeamImage(mHomeImage).execute(homeId);
                 new fetchTeamImage(mAwayImage).execute(awayId);
 
-                Date tempDate = new SimpleDateFormat("dd/MM/yy").parse(mDate);
+                Date tempDate = new SimpleDateFormat("dd/MM/yy").parse(date);
 
                 date = new SimpleDateFormat("dd MMMM yyyy").format(tempDate);
 
                 mDate.setText(date);
-                homeName.setText(strHomeTeam);
-                awayName.setText(strAwayTeam);
+                mHomeName.setText(homeName);
+                mAwayName.setText(awayName);
 
-                if(homeScore != null) {
+                if(mHomeScore != null) {
 
-                    homeScore.setText(intHomeScore);
-                    awayScore.setText(intAwayScore);
+                    mHomeScore.setText(homeScore);
+                    mAwayScore.setText(awayScore);
+
                 }
 
                 return;
@@ -96,5 +91,4 @@ public class fetchNextEvent extends AsyncTask<String, Void, String> {
             e.printStackTrace();
         }
     }
-
 }
