@@ -22,5 +22,21 @@
 
 </LinearLayout>
 
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        android:id="@+id/tabLayoutId">
+
+    </com.google.android.material.tabs.TabLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
