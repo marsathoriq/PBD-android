@@ -71,5 +71,14 @@
 
     </com.google.android.material.tabs.TabLayout>
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:elevation="0dp"
+        android:id="@+id/appbarid">
+
+    </com.google.android.material.appbar.AppBarLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
