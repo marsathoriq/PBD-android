@@ -60,28 +60,22 @@ public class HomePage extends AppCompatActivity {
         // jsonParse2();
         //  Toast.makeText(this, Mdata.get(1).getTeamHome(), Toast.LENGTH_SHORT).show();
 
-        setuprecyclerview(Mdata,LogoTeam);
+
         searchview = findViewById(R.id.search_view);
 
         // Toast.makeText(this, Mdata.get(1).getTeamHome(), Toast.LENGTH_SHORT).show();
         //   setuprecyclerview(Mdata);
-//        searchview.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                nTeam = new ArrayList<String>();
-//                sQueue = Volley.newRequestQueue(this);
-//                query = searchview.getQuery().toString();
-//                jsonParseSearch();
-//                if (nTeam.isEmpty()){
-//
-//                }else{
-//                    for(int i = 0;i < nTeam.size();i++){
-//                        jsonMatchTeam(nTeam[i]);
-//                    }
-//                }
-//            }
-//        });
-
+        searchview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                  Mdata = new ArrayList<>();
+                  LogoTeam = new ArrayList<>();
+                  System.out.println(searchview.getQuery().toString());
+                  new FetchTeam().execute(searchview.getQuery().toString());
+                  setuprecyclerview(Mdata,LogoTeam);
+                }
+            });
+        setuprecyclerview(Mdata,LogoTeam);
         //Team1 = getResources().getStringArray(R.array.HomeTeam);
         //Team2 = getResources().getStringArray(R.array.AwayTeam);
         //Score1 = getResources().getStringArray(R.array.HomeScore);
