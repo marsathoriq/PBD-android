@@ -97,6 +97,15 @@
                         android:textStyle="bold"
                         android:layout_margin="5dp"/>
 
+                    <Button
+                        android:id="@+id/subscribeHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize ="5dp"
+                        android:text = "Subscribe"
+                        android:onClick="homeSubscribe"
+                        />
+
                 </LinearLayout>
 
                 <TextView
@@ -127,6 +136,15 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_margin="5dp"/>
+
+                    <Button
+                        android:id="@+id/subscribeAway"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize ="5dp"
+                        android:text = "Subscribe"
+                        android:onClick="awaySubscribe"
+                        />
                 </LinearLayout>
             </LinearLayout>
 

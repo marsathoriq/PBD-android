@@ -13,13 +13,17 @@ import java.util.Date;
 
 public class FetchEvent extends AsyncTask<String, Void, String> {
     private static final String TAG = FetchEvent.class.getSimpleName();
-    private TextView mDate, mTime, mWeather, mHomeName, mAwayName, mHomeScore, mAwayScore, mHomeShots, mAwayShots, mHomeGoals, mAwayGoals;
+    private TextView mDate, mTime, mWeather, mHomeName, mAwayName, mHomeScore, mAwayScore, mHomeShots, mAwayShots, mHomeGoals, mAwayGoals, homeId, awayId;
     private ImageView mHomeImage, mAwayImage;
 
-    public FetchEvent(TextView mDate, TextView mTime, TextView mWeather,
+    public FetchEvent(TextView homeId, TextView awayId,
+                      TextView mDate, TextView mTime, TextView mWeather,
                       TextView mHomeName, TextView mAwayName, TextView mHomeScore, TextView mAwayScore,
                       TextView mHomeShots, TextView mAwayShots, TextView mHomeGoals, TextView mAwayGoals,
                       ImageView mHomeImage, ImageView mAwayImage){
+        this.homeId = homeId;
+        this.awayId = awayId;
+
         this.mDate = mDate;
         this.mTime = mTime;
         this.mWeather = mWeather;
@@ -82,6 +86,8 @@ public class FetchEvent extends AsyncTask<String, Void, String> {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                this.homeId.setText(homeId);
+                this.awayId.setText(awayId);
 
                 new FetchImageTeam(mHomeImage).execute(homeId);
                 new FetchImageTeam(mAwayImage).execute(awayId);
@@ -98,11 +104,18 @@ public class FetchEvent extends AsyncTask<String, Void, String> {
                 mAwayName.setText(awayName);
 
                 if(mHomeScore != null) {
+                    if (homeScore.equals("null")){
+                        mHomeScore.setText("-");
+                        mAwayScore.setText("-");
+                        mHomeShots.setText("-");
+                        mAwayShots.setText("-");
 
-                    mHomeScore.setText(homeScore);
-                    mAwayScore.setText(awayScore);
-                    mHomeShots.setText(homeShots);
-                    mAwayShots.setText(awayShots);
+                    }else {
+                        mHomeScore.setText(homeScore);
+                        mAwayScore.setText(awayScore);
+                        mHomeShots.setText(homeShots);
+                        mAwayShots.setText(awayShots);
+                    }
 
                     homeGoals = homeGoals.replace(";", "\n");
                     awayGoals = awayGoals.replace(";", "\n");
