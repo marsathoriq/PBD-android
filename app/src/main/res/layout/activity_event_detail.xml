@@ -100,12 +100,12 @@
                         android:layout_margin="5dp"/>
 
                     <Button
-                        android:id="@+id/view"
+                        android:id="@+id/subscribeHome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize ="5dp"
                         android:text = "view"
-                        android:onClick="viewdata"
+                        android:onClick="homeSubscribe"
                         />
 
                 </LinearLayout>
@@ -151,12 +151,12 @@
                         android:textStyle="bold"
                         android:layout_margin="5dp"/>
                     <Button
-                        android:id="@+id/subscribe"
+                        android:id="@+id/subscribeAway"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize ="5dp"
-                        android:text = "subscribe"
-                        android:onClick="dbInput"
+                        android:text = "Subscribe"
+                        android:onClick="awaySubscribe"
                         />
                 </LinearLayout>
             </LinearLayout>

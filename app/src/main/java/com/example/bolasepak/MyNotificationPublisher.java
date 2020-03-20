@@ -35,6 +35,6 @@ public class MyNotificationPublisher extends BroadcastReceiver {
 
         String team_id = notification.getGroup();
         dbSubscribe subscribe = new dbSubscribe(context);
-        //new FetchNextEvent(subscribe, context, false).execute(team_id);
+        new FetchNextEvent(subscribe, context, false).execute(team_id);
     }
 }

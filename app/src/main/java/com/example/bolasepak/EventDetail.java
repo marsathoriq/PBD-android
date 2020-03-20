@@ -11,6 +11,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +49,10 @@ public class EventDetail extends AppCompatActivity {
 
         homeId = (TextView) findViewById(R.id.homeId);
         awayId = (TextView) findViewById(R.id.awayId);
+
+        Button awayButton = findViewById(R.id.subscribeAway);
+        Button homeButton = findViewById(R.id.subscribeHome);
+
         this.searchEvent();
     }
 
@@ -81,9 +86,30 @@ public class EventDetail extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void dbInput(View view) {
+    public void awaySubscribe(View view){
+        Button awayButton = findViewById(R.id.subscribeAway);
+        if (awayButton.getText().toString().equals("Subscribe")){
+            awayButton.setText("Unsubscribe");
+        } else {
+            awayButton.setText("Subscribe");
+        }
 
-        String team_id = "133604";
+        this.dbInput(this.awayId.getText().toString());
+    }
+
+    public void homeSubscribe(View view){
+        Button homeButton = findViewById(R.id.subscribeHome);
+        if (homeButton.getText().toString().equals("Subscribe")){
+            homeButton.setText("Unsubscribe");
+        } else {
+            homeButton.setText("Subscribe");
+        }
+
+        this.dbInput(this.homeId.getText().toString());
+    }
+
+    public void dbInput(String team_id) {
+        Log.d(TAG, team_id);
         JSONArray data = subscribe.getData();
         try {
             for (int i = 0 ; i < data.length(); i++) {
@@ -104,9 +130,9 @@ public class EventDetail extends AppCompatActivity {
 
                     long id = subscribe.delete(team_id);
                     if(id<=0) {
-                        Message.message(getApplicationContext(), "Delete Unsuccessful");
+                        Message.message(getApplicationContext(), "Unsubscribe Unsuccessful");
                     } else {
-                        Message.message(getApplicationContext(),"Delete Successful");
+                        Message.message(getApplicationContext(),"Unsubscribe Successful");
                     }
 
                     return;
@@ -120,9 +146,9 @@ public class EventDetail extends AppCompatActivity {
         new FetchNextEvent(subscribe, this, true).execute(team_id);
 
         if(id<=0) {
-            Message.message(getApplicationContext(), "Insertion Unsuccessful");
+            Message.message(getApplicationContext(), "Subscribe Unsuccessful");
         } else {
-            Message.message(getApplicationContext(),"Insertion Successful");
+            Message.message(getApplicationContext(),"Subscribe Successful");
         }
 
     }

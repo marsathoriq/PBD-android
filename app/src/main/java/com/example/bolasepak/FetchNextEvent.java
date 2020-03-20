@@ -121,6 +121,7 @@ public class FetchNextEvent extends AsyncTask<String, Void, String> {
         builder.setAutoCancel( true ) ;
         builder.setChannelId( "10001" ) ;
         builder.setGroup(team_id);
+        Log.d(TAG, "mi2");
         return builder.build() ;
     }
 
