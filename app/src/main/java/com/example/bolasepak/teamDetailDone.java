@@ -51,7 +51,7 @@ public class teamDetailDone extends AppCompatActivity {
         if(queryString.length() == 0) {
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         } else if ((networkInfo != null) && networkInfo.isConnected() && (queryString.length() != 0)) {
-            new fetchLastEvent(mDate, mEvent, mHomeName, mAwayName, mHomeScore, mAwayScore, mHomeImage, mAwayImage).execute(queryString);
+            //new fetchLastEvent(mDate, mEvent, mHomeName, mAwayName, mHomeScore, mAwayScore, mHomeImage, mAwayImage).execute(queryString);
         } else {
             Toast.makeText(this, "please check yout network connection and try again", Toast.LENGTH_SHORT).show();
         }

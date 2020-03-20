@@ -12,10 +12,10 @@ import java.net.URL;
 public class NetworkUtils {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
 
-    private static final String EVENT_BASE_URL = "https://www.thesportsdb.com/api/v1/json/1/lookupevent.php?";
+    private static final String EVENT_BASE_URL = "http://134.209.97.218:5050/api/v1/json/1/lookupevent.php?";
     private static final String QUERY_EVENT_PARAM = "id"; // Parameter for the search string
 
-    private static final String TEAM_BASE_URL = "https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?";
+    private static final String TEAM_BASE_URL = "http://134.209.97.218:5050/api/v1/json/1/lookupteam.php?";
     private static final String QUERY_TEAM_PARAM = "id"; // Parameter for the search string
 
     private static final String WEATHER_BASE_URL = "http://api.openweathermap.org/data/2.5/forecast?";
@@ -23,7 +23,7 @@ public class NetworkUtils {
     private static final String ID_WEATHER_PARAM = "appid"; // Parameter for the search string
     private static final String MY_APP_ID = "e3e8557df1779fb2613b38292ede7c2a"; // Parameter for the search string
 
-    private static final String NEXT_EVENT_BASE_URL = "https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?";
+    private static final String NEXT_EVENT_BASE_URL = "http://134.209.97.218:5050/api/v1/json/1/eventsnext.php?";
 
     static String getEventInfo(String queryString) {
         HttpURLConnection urlConnection = null;

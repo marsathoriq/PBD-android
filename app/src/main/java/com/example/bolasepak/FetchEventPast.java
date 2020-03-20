@@ -20,7 +20,7 @@ public class FetchEventPast extends AsyncTask<String, Void, String> {
             JSONObject jsonObject = new JSONObject(s);
             JSONArray eventsArray = jsonObject.getJSONArray("events");
 
-            for (int i = 0; i < 5; i++){
+            for (int i = 0; i < 15; i++){
                 Match match = new Match();
                 JSONObject event = eventsArray.getJSONObject(i);
                 String homeName = null;

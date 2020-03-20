@@ -106,14 +106,25 @@ public class FetchEvent extends AsyncTask<String, Void, String> {
                 if(mHomeScore != null) {
                     if (homeScore.equals("null")){
                         mHomeScore.setText("-");
-                        mAwayScore.setText("-");
-                        mHomeShots.setText("-");
-                        mAwayShots.setText("-");
-
                     }else {
                         mHomeScore.setText(homeScore);
+                    }
+
+                    if (awayScore.equals("null")){
+                        mAwayScore.setText("-");
+                    }else {
                         mAwayScore.setText(awayScore);
+                    }
+
+                    if (homeShots.equals("null")){
+                        mHomeShots.setText("-");
+                    }else {
                         mHomeShots.setText(homeShots);
+                    }
+
+                    if (awayShots.equals("null")){
+                        mAwayShots.setText("-");
+                    }else {
                         mAwayShots.setText(awayShots);
                     }
 

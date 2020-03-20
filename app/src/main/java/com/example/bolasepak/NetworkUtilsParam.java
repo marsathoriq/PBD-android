@@ -11,11 +11,10 @@ import java.net.URL;
 
 public class NetworkUtilsParam {
     private static final String LOG_TAG = NetworkUtilsParam.class.getSimpleName();
-
-    private static final String EVENT_BASE_URL = "https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?";
+    private static final String EVENT_BASE_URL = "http://134.209.97.218:5050/api/v1/json/1/eventspastleague.php?";
     private static final String QUERY_EVENT_PARAM = "id"; // Parameter for the search string
 
-    private static final String TEAM_BASE_URL = "https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?";
+    private static final String TEAM_BASE_URL = "http://134.209.97.218:5050/api/v1/json/1/lookupteam.php?";
     private static final String QUERY_TEAM_PARAM = "id"; // Parameter for the search string
 
     static String getData(String queryString, String base_url, String query) {
