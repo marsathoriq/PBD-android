@@ -39,7 +39,7 @@ public class NextEventDetail extends AppCompatActivity {
     }
 
     public void goToMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomePage.class);
 
         startActivity(intent);
     }
@@ -55,7 +55,7 @@ public class NextEventDetail extends AppCompatActivity {
         if(queryString.length() == 0) {
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         } else if ((networkInfo != null) && networkInfo.isConnected() && (queryString.length() != 0)) {
-            new FetchEvent(mDate, mTime, mWeather, mHomeName, mAwayName, null, null, null, null, null, null, mHomeImage, mAwayImage).execute(queryString);
+            new FetchEvent(null, null, mDate, mTime, mWeather, mHomeName, mAwayName, null, null, null, null, null, null, mHomeImage, mAwayImage).execute(queryString);
         } else {
             Toast.makeText(this, "please check yout network connection and try again", Toast.LENGTH_SHORT).show();
         }

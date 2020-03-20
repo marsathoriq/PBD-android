@@ -89,7 +89,8 @@
                         android:id="@+id/homeImage"
                         android:layout_width="92dp"
                         android:layout_height="97dp"
-                        android:layout_margin="5dp"/>
+                        android:layout_margin="5dp"
+                        android:onClick="goToTeam"/>
 
                     <TextView
                         android:id="@+id/homeName"
@@ -97,6 +98,15 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_margin="5dp"/>
+
+                    <Button
+                        android:id="@+id/view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize ="5dp"
+                        android:text = "view"
+                        android:onClick="viewdata"
+                        />
 
                 </LinearLayout>
                 <TextView
@@ -131,7 +141,8 @@
                         android:id="@+id/awayImage"
                         android:layout_width="92dp"
                         android:layout_height="97dp"
-                        android:layout_margin="5dp"/>
+                        android:layout_margin="5dp"
+                        android:onClick="goToTeam" />
 
                     <TextView
                         android:id="@+id/awayName"
@@ -139,6 +150,14 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_margin="5dp"/>
+                    <Button
+                        android:id="@+id/subscribe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize ="5dp"
+                        android:text = "subscribe"
+                        android:onClick="dbInput"
+                        />
                 </LinearLayout>
             </LinearLayout>
 
@@ -221,6 +240,24 @@
                     android:textSize="15sp"
                     android:gravity="center"/>
             </LinearLayout>
+            <TextView
+                android:id="@+id/homeId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:text="test"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/awayId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:text="test"
+                android:visibility="gone"/>
             </LinearLayout>
         </ScrollView>
 

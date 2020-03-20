@@ -20,6 +20,7 @@ public class MyNotificationPublisher extends BroadcastReceiver {
     private Long delay;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT_WATCH)
     public void onReceive (Context context , Intent intent) {
+        Log.d(TAG, "cek");
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context. NOTIFICATION_SERVICE ) ;
         Notification notification = intent.getParcelableExtra( NOTIFICATION ) ;
         if (android.os.Build.VERSION. SDK_INT >= android.os.Build.VERSION_CODES. O ) {
@@ -34,6 +35,6 @@ public class MyNotificationPublisher extends BroadcastReceiver {
 
         String team_id = notification.getGroup();
         dbSubscribe subscribe = new dbSubscribe(context);
-        new FetchNextEvent(subscribe, context, false).execute(team_id);
+        //new FetchNextEvent(subscribe, context, false).execute(team_id);
     }
 }

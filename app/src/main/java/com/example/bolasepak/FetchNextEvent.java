@@ -96,7 +96,8 @@ public class FetchNextEvent extends AsyncTask<String, Void, String> {
                         long delay = date.getTime() - today.getTime();
                         Log.d(TAG, Long.toString(delay));
                         String isi = "tim " + namaTeam + " akan main beberapa saat lagi!";
-                        scheduleNotification(getNotification( isi, this.idTeam) , delay) ;
+                        scheduleNotification(getNotification( isi, this.idTeam) , 5*1000) ;
+                        Log.d(TAG, "mis");
 
                         return;
                     }
