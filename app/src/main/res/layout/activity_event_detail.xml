@@ -90,7 +90,7 @@
                             android:layout_width="92dp"
                             android:layout_height="97dp"
                             android:layout_margin="5dp"
-                            android:onClick="goToTeam"/>
+                            android:onClick="goToHomeTeam"/>
 
                         <TextView
                             android:id="@+id/homeName"
@@ -142,7 +142,7 @@
                             android:layout_width="92dp"
                             android:layout_height="97dp"
                             android:layout_margin="5dp"
-                            android:onClick="goToTeam" />
+                            android:onClick="goToAwayTeam" />
 
                         <TextView
                             android:id="@+id/awayName"

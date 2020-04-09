@@ -10,7 +10,7 @@ public class FetchTeamFuture extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... strings) {
-        return com.example.bolasepak.NetworkUtilsParam.getData(strings[0],"https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?","id");
+        return com.example.bolasepak.NetworkUtilsParam.getData(strings[0],"http://134.209.97.218:5050/api/v1/json/1/eventsnext.php?","id");
     }
 
     @Override

@@ -79,10 +79,19 @@ public class EventDetail extends AppCompatActivity {
         }
     }
 
-    public void goToTeam(View view) {
+    public void goToHomeTeam(View view) {
         //Toast.makeText(this, this.homeId.getText().toString(), Toast.LENGTH_SHORT).show();
         //this.dbInput();
         Intent intent = new Intent(this, teamDetailDone.class);
+        intent.putExtra("id", this.homeId.getText().toString());
+        startActivity(intent);
+    }
+
+    public void goToAwayTeam(View view) {
+        //Toast.makeText(this, this.homeId.getText().toString(), Toast.LENGTH_SHORT).show();
+        //this.dbInput();
+        Intent intent = new Intent(this, teamDetailDone.class);
+        intent.putExtra("id", this.awayId.getText().toString());
         startActivity(intent);
     }
 
